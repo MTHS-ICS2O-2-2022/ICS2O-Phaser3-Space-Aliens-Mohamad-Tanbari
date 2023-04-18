@@ -13,7 +13,17 @@ const config = {
   type: Phaser.AUTO,
   width: 1920,
   height: 1080,
+  // Set background color
   backgroundColor: 0x5f6e7a,
+  physics: {
+    default: "arcade",
+    debug: true
+  },
+  scale: {
+    mode: Phaser.Scale.Fit,
+    // Move to the center
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  }
 }
 
 const game = new Phaser.Game(config)
