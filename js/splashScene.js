@@ -16,7 +16,7 @@ class SplashScene extends Phaser.Scene {
   }
 
   preload () {
-    console.log('Splash Scene')
+    console.log("Splash Scene")
   }
 
   create (data) {
