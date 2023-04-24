@@ -8,7 +8,7 @@
 
 class TitleScene extends Phaser.Scene {
   constructor () {
-    super({ key: 'TitleScene' })
+    super({ key: 'titleScene' })
   }
 
   init (data) {
