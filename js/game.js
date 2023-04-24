@@ -35,7 +35,7 @@ console.log(game)
 
 // load scenes
 // key is global
-game.scene.add("splashScene", splashScene)
+game.scene.add("SplashScene", splashScene)
 
 // start title
-game.scene.start("splashScene")
+game.scene.start("SplashScene")
