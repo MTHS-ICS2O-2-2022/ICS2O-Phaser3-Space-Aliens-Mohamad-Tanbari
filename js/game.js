@@ -7,7 +7,7 @@
 // This is the Phaser3 game confiuration file
 
 import SplashScene from './splashScene.js'
-import SplashScene from './titleScene.js'
+import TitleScene from './titleScene.js'
 
 const splashScene = new SplashScene()
 const titleScene = new TitleScene()
