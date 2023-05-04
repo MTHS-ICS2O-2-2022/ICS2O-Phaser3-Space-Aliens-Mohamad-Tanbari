@@ -36,7 +36,7 @@ class MenuScene extends Phaser.Scene {
   */
   preload() {
     console.log("Menu Scene")
-    this.load.image("menuSceneBackground", "./assets/aliens_screen_image2.png")
+    this.load.image("menuSceneBackground", "./assets/aliens_screen_image2.jpg")
     this.load.image("startButton", "./assets/start.png")
   }
 
@@ -53,8 +53,8 @@ class MenuScene extends Phaser.Scene {
   /*
   * Should be overriden by your own Scenes.
   * This method is called once per game step while the scene is running.
-  * @param {number} time - the current time.
-  * @param {number} delta - the delta time in ms since the last frame
+  *  @param {number} time - the current time.
+  *  @param {number} delta - the delta time in ms since the last frame
   */
   update(time, delta) {
     // pass
