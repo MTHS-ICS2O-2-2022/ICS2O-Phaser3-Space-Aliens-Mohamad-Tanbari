@@ -30,14 +30,14 @@ const config = {
     debug: true
   },
   scale: {
-    mode: Phaser.Scale.Fit,
+    mode: Phaser.Scale.FIT,
     // Move to the center
     autoCenter: Phaser.Scale.CENTER_BOTH
   }
 }
 
 const game = new Phaser.Game(config)
-console.log(game)
+// console.log(game)
 
 // load scenes
 // key is global (can't be reused)
@@ -47,4 +47,4 @@ game.scene.add("menuScene", menuScene)
 game.scene.add("gameScene", gameScene)
 
 // start scene
-game.scene.start("SplashScene")
+game.scene.start("splashScene")

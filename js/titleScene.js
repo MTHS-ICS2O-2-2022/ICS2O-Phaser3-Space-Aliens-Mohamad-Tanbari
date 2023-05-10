@@ -15,8 +15,8 @@ class TitleScene extends Phaser.Scene {
 
     this.titleSceneBackgroundImage = null
     this.titleSceneText = null
-    this.titleSceneTestStyle = {
-      font: '400px Times',
+    this.titleSceneTextStyle = {
+      font: '200px Times',
       fill: '#fde4b9',
       align: 'center',
     }
@@ -61,6 +61,9 @@ class TitleScene extends Phaser.Scene {
   *  @param {number} delta - the delta time in ms since the last frame
   */
   update (time, delta) {
+    if (time > 6000) {
+      this.scene.switch("menuScene")
+    }
   }
 }
 
