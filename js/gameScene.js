@@ -38,9 +38,12 @@ class GameScene extends Phaser.Scene {
   preload() {
     console.log("Game Scene")
 
+    // images
     this.load.image("starBackground", "assets/starBackground.png")
     this.load.image("ship", "assets/spaceShip.png")
     this.load.image("missile", "assets/missile.png")
+    // sound
+    this.load.audio("laser", "assets/laser1.wav")
   }
 
   create(data) {
@@ -50,7 +53,7 @@ class GameScene extends Phaser.Scene {
     this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, "ship")
 
     // create a group for the missles
-    this.missleGroup = this.physics.add.group()
+    this.missileGroup = this.physics.add.group()
   }
 
   /*
@@ -78,17 +81,34 @@ class GameScene extends Phaser.Scene {
     }
 
     if (keySpaceObj.isDown === true) {
-      if (this.fireMissle === false) {
-        // fire missle
-        this.fireMissle
-        const aNewMissle = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
-        this.missleGroup.add(aNewMissle)
+      if (this.fireMissile === false) {
+        // fire missile
+        this.fireMissile = true
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
+        this.missileGroup.add(aNewMissile)
+      }
+    }
+
+      if (keySpaceObj.isDown === true) {
+        if (this.fireMissile === false) {
+        // fire missile
+        this.fireMissile = true
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
+        this.missileGroup.add(aNewMissile)
+        this.sound.play('laser')
       }
     }
 
     if (keySpaceObj.isUp === true) {
-      this.fireMissle = false
+      this.fireMissile = false
     }
+
+    this.missileGroup.children.each(function (item) {
+      item.y = item.y - 15
+      if (item.y < 0) {
+        item.destroy()
+      }
+    })
   }
 }
 
