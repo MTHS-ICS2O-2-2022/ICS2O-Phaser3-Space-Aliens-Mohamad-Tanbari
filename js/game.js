@@ -27,7 +27,7 @@ const config = {
   backgroundColor: 0x5f6e7a,
   physics: {
     default: "arcade",
-    debug: true
+    debug: false
   },
   scale: {
     mode: Phaser.Scale.FIT,
